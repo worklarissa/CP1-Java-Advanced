@@ -10,7 +10,7 @@ public class FuncionarioJunior extends Funcionario{
 
     @Override
     public String imprimirInformacao() {
-        return "Funcionário Junio" +
+        return "Funcionário Junior" +
                 "\nNome: " + nome +
                 "\nHoras Trabalhadas: " + horasTrabalhadas +
                 "\nValor pago por hora: " + valorPagoHoras +
