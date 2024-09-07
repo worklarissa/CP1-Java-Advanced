@@ -1,17 +1,32 @@
 package br.com.fiap.view;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import br.com.fiap.dao.JpaDao;
+import br.com.fiap.model.FuncionarioJunior;
+import br.com.fiap.model.FuncionarioPleno;
+import br.com.fiap.model.FuncionarioSenior;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        JpaDao dao = new JpaDao();
+
+        FuncionarioJunior fj = new FuncionarioJunior("Pedro",10.0,70.0);
+        dao.pesquisar(fj);
+        fj.imprimirInformacao();
+
+        FuncionarioJunior j1 = new FuncionarioJunior("Larissa",8.0,70.0);
+        dao.pesquisar(j1);
+        j1.imprimirInformacao();
+
+        FuncionarioPleno fp = new FuncionarioPleno("Murillo",20.0,80.0);
+        dao.pesquisar(fp);
+        fp.imprimirInformacao();
+
+        FuncionarioSenior fs = new FuncionarioSenior("Luna",30.0,90.0);
+        dao.pesquisar(fs);
+        fs.imprimirInformacao();
+
+
+
     }
 }

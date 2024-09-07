@@ -1,5 +1,8 @@
 package br.com.fiap.model;
 
+import br.com.fiap.annotation.Tabela;
+
+@Tabela(nome="TAB_FUNCIONARIO_SENIOR")
 public class FuncionarioSenior extends Funcionario{
 
     private static final double bonusPercentual = 0.30;
@@ -9,12 +12,12 @@ public class FuncionarioSenior extends Funcionario{
     }
 
     @Override
-    public String imprimirInformacao() {
-        return "Funcionário Sênior" +
+    public void imprimirInformacao() {
+        System.out.println("Funcionário Sênior" +
                 "\nNome: " + nome +
                 "\nHoras Trabalhadas: " + horasTrabalhadas +
                 "\nValor pago por hora: " + valorPagoHoras +
-                "\nSalário: " + calcularSalario();
+                "\nSalário: R$" + calcularSalario());
     }
 
     @Override

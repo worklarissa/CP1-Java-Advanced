@@ -1,15 +1,18 @@
 package br.com.fiap.model;
 
-//@Tabela(nome="TAB_FUNCIONARIO")
+import br.com.fiap.annotation.Coluna;
+import br.com.fiap.annotation.Tabela;
+
+@Tabela(nome="TAB_FUNCIONARIO")
 public class Funcionario {
 
-    //@Coluna(nome="nm_funcionario")
+    @Coluna(nome="nm_funcionario")
     protected String nome;
 
-    //@Coluna(nome="vl_horas_trab")
+    @Coluna(nome="vl_horas_trab")
     protected double horasTrabalhadas;
 
-    //@Coluna(nome="vl_valor_pago")
+    @Coluna(nome="vl_valor_pago")
     protected double valorPagoHoras;
 
     public Funcionario(String nome, double horasTrabalhadas, double valorPagoHoras) {
@@ -42,11 +45,11 @@ public class Funcionario {
         this.valorPagoHoras = valorPagoHoras;
     }
 
-    public String imprimirInformacao() {
-        return "Funcionário" +
+    public void imprimirInformacao() {
+        System.out.println("Funcionário" +
                 "\nNome: " + nome + '\'' +
                 "Horas trabalhadas: " + horasTrabalhadas +
-                "Valor pago por hora: " + valorPagoHoras;
+                "Valor pago por hora: " + valorPagoHoras);
     }
 
     public double calcularSalario(){
